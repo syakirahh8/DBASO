@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me!</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="shortcut icon" href="assets/logo dbaso.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <section class="contact" id="contact">
+        <h2>Contact <span>Me!</span></h2>
+    
+      <form action="https://formsubmit.co/azkasyakir800@gmail.com" method="POST">
+        <div class="input-box">
+            <input type="text" name="name" required placeholder="Nama Lengkap">
+            <input type="text" name="nickname" required placeholder="Nama Panggilan">
+        </div>
+        <div class="input-box">
+            <input type="text" name="subject" required placeholder="Mood Kamu hari ini??">
+            <input type="email" name="email" required placeholder="Email">
+        </div>
+        <textarea name="story" cols="30" rows="10" placeholder="Mau Cerita Apaa??"></textarea>
+       <div class="button-bubbly">
+        <button type="submit" class="bubbly">Send Message</button>
+       </div> 
+      </form>
+      </section>
+
+      <script>
+        // Ambil semua elemen yang ingin dianimasikan
+const formElements = document.querySelectorAll('.contact input, .contact textarea, .button-bubbly');
+
+// Buat observer untuk memantau elemen saat muncul di viewport
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Tambahkan kelas 'show' saat elemen terlihat
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target); // Hentikan pengamatan
+    }
+  });
+}, { threshold: 0.2 }); // Elemen dianggap terlihat saat 20% sudah masuk viewport
+
+// Pasangkan observer ke setiap elemen
+formElements.forEach(element => observer.observe(element));
+
+      </script>
+</body>
+</html>

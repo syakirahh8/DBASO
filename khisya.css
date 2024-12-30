@@ -1,0 +1,306 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Poppins;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+}
+
+.btn-back {
+    padding-top: 3rem;
+    justify-content: start;
+    background: linear-gradient(#EEEDEB, #E7CCCC);
+}
+.back-k {
+    padding: 10px 35px;
+    background: transparent;
+    border: 2px solid #facece ;
+    margin: 0 20px;
+    color: pink;
+    font-size: 18px;
+    border-radius: 4rem;
+    cursor: pointer;
+}
+
+.back-k:hover {
+    color: #F0A8D0;
+}
+.khisya {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.khisya-img img {
+    width: 30vw;
+    margin-bottom: 3rem;
+}
+
+.heading-k {
+    font-size: 5rem;
+    margin-top: -4rem;
+    color: #F0A8D0;
+    text-align: justify;
+    padding: 0 0 0 3rem;
+}
+
+.heading-k span {
+    color: #E7CCCC;
+    
+}
+
+.khisya-content p {
+    font-size: 1.5rem;
+    margin-top: -50px;
+    color: #e584a6;
+    padding: 0 0 0  3rem;
+}
+
+/* Initial state for the khisya content and image */
+.khisya-content,
+.khisya-img {
+    opacity: 0;  /* Make elements invisible initially */
+    transform: scale(0.9);  /* Slightly reduce the size initially */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Fade-in and scale-up effect */
+@keyframes fadeInScaleUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);  /* Start slightly smaller */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);  /* End with normal size */
+    }
+}
+
+/* Apply the fade-in scale-up effect when the element is visible */
+.khisya-content.visible,
+.khisya-img.visible {
+    animation: fadeInScaleUp 0.6s ease forwards;
+}
+
+
+/* slider */
+
+/* Initial state for the slider images */
+.slider-img {
+    opacity: 0;
+    transform: scale(0.8);  /* Start from smaller size */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Scale-up effect */
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.8); /* Start smaller */
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);  /* Scale up to original size */
+        opacity: 1;  /* Fully visible */
+    }
+}
+
+/* Active class when the image becomes visible */
+.slider-img.visible {
+    animation: scaleUp 0.6s ease forwards;
+}
+
+
+.chapter {
+    color: #FFCFCF;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .chapter span {
+    color: #E195AB;
+  }
+  
+  .slider-container {
+    width: 100%;
+    height: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .slider-images {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  
+  .slider-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  
+  .slider-img {
+    width: 110px;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.7s ease;
+  }
+  
+  .slider-images .slider-img:first-child,
+  .slider-images .slider-img:last-child {
+    height: 380px;
+  }
+  
+  .slider-images .slider-img:nth-child(2),
+  .slider-images .slider-img:nth-child(6) {
+    height: 460px;
+  }
+  
+  .slider-images .slider-img:nth-child(3),
+  .slider-images .slider-img:nth-child(4),
+  .slider-images .slider-img:nth-child(5) {
+    height: 565px;
+  }
+  
+  h1 {
+    font-family: "Jost", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: left;
+    text-transform: uppercase;
+    color: #F0C1E1;
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    transform: rotate(270deg);
+    transition: 0.7s ease;
+  }
+  
+  .details {
+    position: absolute;
+    bottom: 43px;
+    left: 43px;
+  }
+  
+  .details h2 {
+    font-family: "Jost", sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    text-align: left;
+    line-height: 44px;
+    text-align: left;
+    color: #F0C1E1;
+    text-transform: uppercase;
+    transition: 0.7s ease;
+    display: none;
+  }
+  
+  .slider-img.active {
+    width: 466px !important;
+    height: 450px !important;
+  }
+  
+  .slider-img.active h1 {
+    display: none;
+  }
+  
+  .slider-img.active .details p,
+  .slider-img.active .details h2 {
+    display: block;
+  }
+
+  /* logo berjalan */
+  @keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  padding: 60px 0;
+  background: white;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.logos:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  display: inline-block;
+  animation: 35s slide infinite linear;
+}
+
+.logos-slide img {
+  height: 150px;
+  margin: 0 40px;
+}
+
+.footerBottom{
+  background: linear-gradient(to right, #FAF6E3, #E5D9F2); 
+  padding: 10px;
+  text-align: center;
+}
+.footerBottom p{
+  color: #8174A0;
+  font-weight: 600;
+}
+.designer{
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin: 0px 5px;
+}
+@media (max-width: 700px){
+  .footerNav ul{
+      flex-direction: column;
+  } 
+  .footerNav ul li{
+      width:100%;
+      text-align: center;
+      margin: 10px;
+  }
+  .socialIcons a{
+      padding: 8px;
+      margin: 4px;
+  }
+}

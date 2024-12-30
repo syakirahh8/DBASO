@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Handlee&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Patrick+Hand&family=Quicksand:wght@300..700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: Poppins;
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+  .contact {
+    background: linear-gradient(to right, #FAF6E3, #E5D9F2); 
+}
+.contact h2 {
+    font-size: 5rem;
+    color: #A888B5;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.contact form {
+    max-width: 70rem;
+    text-align: center;
+    margin: 1rem auto; /*1rem margin secara vertikal auto margin horizontal*/
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input, .contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    border: none;
+    color: whitesmoke;
+    background-color: #BED7DC;
+    border-radius: .8rem;
+    margin: .7rem 0;
+}
+
+.contact form .input-box input {
+    width: 49%;
+}
+
+.contact form textarea {
+    resize: none;
+}
+
+.button-bubbly {
+    margin-top: 1.5rem;
+}
+
+.bubbly {
+    background-color: #BCCCDC;
+    color: #2E5077;
+    padding: 1rem 2.8rem; /*vertial horizontal*/
+    border-radius: 64px 48px 38px 96px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    /* box-shadow: 0 0 1rem #BCCCDC; */
+    border: none;
+    transition: 1s ease-in-out;
+    cursor: pointer;
+}
+
+.bubbly:hover {
+    /* box-shadow: 0 0 1rem #5A6C57; */
+    transition: .5s ease;
+    background: transparent;
+    border: 2px solid #BCCCDC;
+    color: #BCCCDC;
+    transition: 0.5s ease-in-out;
+}
+
+/* Animasi kombinasi untuk elemen */
+@keyframes fadeInScaleRotate {
+    0% {
+      opacity: 0;
+      transform: translateY(50px) scale(0.8) rotate(10deg);
+    }
+    50% {
+      opacity: 0.5;
+      transform: translateY(20px) scale(1.05) rotate(-10deg);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1) rotate(0);
+    }
+  }
+  
+  /* Animasi goyang tombol */
+  @keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+  }
+  
+  /* Kelas untuk memulai animasi */
+  .show {
+    animation: fadeInScaleRotate 1s ease-in-out forwards;
+  }
